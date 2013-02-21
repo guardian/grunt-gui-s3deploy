@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 		// Configuration to be run (and then tested).
 		deploy: {
 			bucket: 'gdn-cdn',
-			path: '2013/feb/gui-deploy-test4',
+			path: '2013/feb/gui-deploy-test',
 			root: 'test/fixtures/sample01',
 			guid: '54e3fea3-9efa-4b31-b2b9-d0132026c7b1'
 		},
