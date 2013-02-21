@@ -150,7 +150,7 @@ module.exports = function( grunt ) {
 
 
 		fetchManifest = function () {
-			var deferred, objectRequest, resolve;
+			var deferred, objectRequest;
 
 			deferred = new Deferred();
 
@@ -195,7 +195,7 @@ module.exports = function( grunt ) {
 
 			putObjectRequest.on( 'error', fail( '\nCould not lock project' ) );
 
-			putObjectRequest.on( 'success', function ( response ) {
+			putObjectRequest.on( 'success', function () {
 				grunt.log.writeln( '\nProject is locked. Proceeding with upload\n' );
 				deferred.resolve();
 			});
@@ -217,7 +217,7 @@ module.exports = function( grunt ) {
 
 			deleteObjectRequest.on( 'error', fail( '\nCould not unlock project' ) );
 
-			deleteObjectRequest.on( 'success', function ( response ) {
+			deleteObjectRequest.on( 'success', function () {
 				grunt.log.writeln( '\nProject is unlocked\n' );
 				deferred.resolve();
 			});
@@ -279,7 +279,7 @@ module.exports = function( grunt ) {
 
 				putObjectRequest.on( 'error', fail( 'Error uploading ' + relpath ) );
 
-				putObjectRequest.on( 'success', function ( response ) {
+				putObjectRequest.on( 'success', function () {
 					var index;
 
 					grunt.log.writeln( 'File uploaded (' + ( queue.length - 1 ) + ' to go): ' + relpath );
@@ -323,7 +323,7 @@ module.exports = function( grunt ) {
 
 			putObjectRequest.on( 'error', fail( 'Error uploading manifest.json' ) );
 
-			putObjectRequest.on( 'success', function ( response ) {
+			putObjectRequest.on( 'success', function () {
 				grunt.log.writeln( 'Uploaded manifest.json' );
 				deferred.resolve();
 			});
