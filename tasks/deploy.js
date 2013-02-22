@@ -125,10 +125,10 @@ module.exports = function( grunt ) {
 		};
 
 
-		checkIfFolderExists = function ( folder, callback ) {
-			var listObjectsRequest = s3.client.listObjects({ Bucket: config.bucket, Prefix: folder });
+		checkIfFolderExists = function ( callback ) {
+			var listObjectsRequest = s3.client.listObjects({ Bucket: config.bucket, Prefix: config.folder + '/' });
 
-			listObjectsRequest.on( 'error', fail( 'Could not fetch object list from folder "' + folder + '"' ) );
+			listObjectsRequest.on( 'error', fail( 'Could not fetch object list from folder "' + config.folder + '"' ) );
 
 			listObjectsRequest.on( 'success', function ( response ) {
 				var contents;
@@ -361,7 +361,7 @@ module.exports = function( grunt ) {
 		// execute task
 		s3 = getS3();
 
-		checkIfFolderExists( config.path, function ( folderExists ) {
+		checkIfFolderExists( function ( folderExists ) {
 			
 			// if the project folder already exists, we need to verify the guid in the manifest
 			// to avoid accidental naming collisions etc
