@@ -126,9 +126,9 @@ module.exports = function( grunt ) {
 
 
 		checkIfFolderExists = function ( callback ) {
-			var listObjectsRequest = s3.client.listObjects({ Bucket: config.bucket, Prefix: config.folder + '/' });
+			var listObjectsRequest = s3.client.listObjects({ Bucket: config.bucket, Prefix: config.path + '/' });
 
-			listObjectsRequest.on( 'error', fail( 'Could not fetch object list from folder "' + config.folder + '"' ) );
+			listObjectsRequest.on( 'error', fail( 'Could not fetch object list from folder "' + config.path + '"' ) );
 
 			listObjectsRequest.on( 'success', function ( response ) {
 				var contents;
