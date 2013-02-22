@@ -238,7 +238,10 @@ module.exports = function( grunt ) {
 			lock().then( function () {
 				uploadFiles( v ).then( function () {
 					uploadManifest( v ).then( function () {
-						unlock().then( deferred.resolve );
+						unlock().then( function () {
+							grunt.log.writeln( 'Deployed to ' + config.path + '/v/' + v );
+							deferred.resolve();
+						});
 					});
 				});
 			});
