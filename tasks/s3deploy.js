@@ -1,5 +1,5 @@
 /*
- * grunt-gui-deploy
+ * grunt-gui-s3deploy
  * 
  *
  * Copyright (c) 2013 Guardian Interactive team
@@ -13,7 +13,7 @@ module.exports = function( grunt ) {
 
 	'use strict';
 
-	grunt.registerTask( 'deploy', 'Deploy projects to the Guardian Interactive Team S3 bucket', function() {
+	grunt.registerTask( 's3deploy', 'Deploy projects to the Guardian Interactive Team S3 bucket', function() {
 		
 		var done,
 			fail,

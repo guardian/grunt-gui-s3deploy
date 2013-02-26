@@ -1,5 +1,5 @@
 /*
- * grunt-gui-deploy
+ * grunt-gui-s3deploy
  * 
  *
  * Copyright (c) 2013 Guardian Interactive team
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 		},
 
 		// Configuration to be run (and then tested).
-		deploy: {
+		s3deploy: {
 			bucket: 'gdn-cdn',
 			path: '2013/feb/gui-deploy-test',
 			root: 'test/fixtures/sample01',
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		// Unit tests.
 		nodeunit: {
 			tests: ['test/*_test.js'],
-		},
+		}
 
 	});
 

@@ -1,5 +1,5 @@
 {
-  "name": "grunt-gui-deploy",
+  "name": "grunt-gui-s3deploy",
   "description": "Deploy project to the Guardian Interactive Team S3 bucket",
   "version": "0.1.0",
   "homepage": "",
